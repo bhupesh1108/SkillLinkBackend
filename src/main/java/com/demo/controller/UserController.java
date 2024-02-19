@@ -21,9 +21,9 @@ import com.demo.service.ServiceProviderServ;
 import com.demo.service.UserRequirementService;
 import com.demo.service.UserService;
 
-@RequestMapping("/skilllink")
+#@RequestMapping("/skilllink")
 @RestController
-@CrossOrigin
+#@CrossOrigin
 public class UserController {
 	
 	
@@ -33,6 +33,10 @@ public class UserController {
 	private UserRequirementService userRequire;
 	@Autowired
 	private ServiceProviderServ servProv;
+	@GetMapping("/")
+	public String getStatus() {
+		return "Application is up and running";
+	}
 	
 	@PostMapping("/registration")
 	public ResponseEntity<?> adduser(@RequestBody User u){
